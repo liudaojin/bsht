@@ -1,0 +1,215 @@
+/* 手机区域 */
+.app {
+    overflow-x: hidden;
+}
+
+/* 头部区域 */
+.app-header{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #009688;
+    z-index: 1030;
+}
+
+/* 头部标志 */
+.app-header__logo{
+    font-size: 20px;
+    color: #fff;
+    padding: 0 15px;
+    line-height: 50px;
+    text-align: center;
+    order: 2;
+    flex-grow: 1;
+}
+.app-header__logo:focus,
+.app-header__logo:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* 头部三横杠 */
+.app-sidebar__toggle{
+    display: block;
+    padding: 0 15px;
+    color: #fff;
+    font-size: 21px;
+    transition: background-color 0.3s ease;
+    line-height: 50px;
+    order: 1;
+}
+.app-sidebar__toggle:focus,
+.app-sidebar__toggle:hover {
+    color: #fff;
+    background-color: #00635a;
+    text-decoration: none;
+}
+
+/*头部右侧导航*/
+.app-header__nav{
+    display: flex;
+    order: 3;
+    justify-content: flex-end;
+}
+
+/* 侧边栏 */
+.app-sidebar{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -230px;
+    padding-top: 70px;
+    width: 230px;
+    overflow: auto;
+    z-index: 10;
+    background-color: #222d32;
+    transition: left 0.3s ease, width 0.3s ease;
+}
+
+/* 侧边栏隐藏 */
+.app.sidebar-toggled .app-content {
+    margin-left: 0;
+}
+
+.app.sidebar-toggled .app-sidebar {
+    left: 0;
+}
+
+/* 侧边栏树形菜单 */
+.app-sidebar ul{
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+.app-sidebar li.panel{
+    position: relative;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    margin-bottom: 0;
+    border: none;
+    z-index: 999;
+}
+.app-sidebar li a{
+    display: flex;
+    padding: 12px 15px;
+    border-left: 3px solid transparent;
+    color: #fff;
+    height: 44px;
+    align-items: center;
+    white-space: nowrap;
+}
+.app-sidebar li a:hover,
+.app-sidebar li a:focus{
+    text-decoration: none;
+}
+.panel.active .app-menu__item,
+.panel:hover .app-menu__item,
+.panel:focus .app-menu__item{
+    background: #0d1214;
+    border-left-color: #009688;
+    text-decoration: none;
+    color: #fff;
+}
+
+.panel.active .app-menu__item .app-menu__arrow{
+    transform: rotate(90deg);
+}
+
+.app-sidebar li.panel li a{
+    padding: 5px 5px 5px 20px;
+}
+.app-sidebar li.panel li a:hover{
+    background-color: #0d1214;
+}
+.app-sidebar li.panel li a .icon{
+    margin-right: 10px;
+}
+
+.app-sidebar .app-menu__label{
+    padding-left: 10px;
+    flex-grow: 1;
+    white-space: nowrap;
+}
+.app-sidebar .app-menu__arrow{
+    transition: all .3s ease;
+}
+.app-content{
+    min-height: calc(100vh - 50px);
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #E5E5E5;
+    transition: margin-left 0.3s ease;
+}
+
+/* 大于手机区域 （这里指平板） */
+@media screen and (min-width: 768px){
+    
+    .app-header__logo{
+        display: block;
+        width: 230px;
+        background-color: #007d71;
+        order: 1;
+        flex-grow: 0;
+    }
+
+    .app-sidebar__toggle{
+        order: 2;
+    }
+
+    .app-header__nav{
+        flex-grow: 1;
+    }
+
+    .app .app-sidebar{
+        left: 0;
+    }
+    .app-content {
+        margin-left: 230px;
+    }
+    .sidebar-mini.sidebar-toggled .app-sidebar {
+        overflow: visible;
+    }
+    .sidebar-mini.sidebar-toggled .app-content {
+        margin-left: 50px;
+    }
+    .sidebar-mini.sidebar-toggled .app-sidebar {
+        left: 0;
+        width: 50px;
+    }
+
+    .sidebar-mini.sidebar-toggled .app-menu__label,
+    .sidebar-mini.sidebar-toggled .app-menu__arrow{
+        display: none;
+    }
+
+    .sidebar-mini.sidebar-toggled .app-menu__label {
+        position: absolute;
+        top: 0;
+        left: 50px;
+        min-width: 180px;
+        padding: 12px 5px 12px 20px;
+        background: #0d1214;
+        border-top-right-radius: 4px;
+    }
+    .sidebar-mini.sidebar-toggled .panel ul,
+    .sidebar-mini.sidebar-toggled .panel ul{
+        position: absolute;
+        left: 50px;
+        display: none;
+        height: auto !important;
+        min-width: 180px;
+        background-color: #2a383e;
+    }
+    .sidebar-mini.sidebar-toggled .panel:hover .app-menu__label{
+        display: block;
+    }
+    .sidebar-mini.sidebar-toggled .panel:hover ul,
+    .sidebar-mini.sidebar-toggled .panel:focus ul{
+        display: block;
+    }
+    
+}

@@ -1,0 +1,35 @@
+body{
+    /* background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); */
+}
+.content{
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    align-items: center;
+
+}
+.content .container .row h2{
+    text-align: center;
+    font-family: '经典超圆简_0';
+    color: #212529;
+}
+.content .container .row h2 i{
+    margin-right: 10px;
+}
+.container{
+    background-color: white;
+    width: 350px;
+    border-radius: 3px;
+    margin-top: -50px;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.content .container .row .form-horizontal{
+    padding: 30px;
+}
+@media screen and (min-width:768px){
+    .container{
+        max-width: 450px;
+    }
+}

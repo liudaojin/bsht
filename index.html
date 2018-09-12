@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="app">
+      <!-- header start -->
+      <div class="header">
+          <a class="user-name">Admin</a>
+          <a class="user-menu" data-toggle="sidebar" href="javascript:;"></a>
+          <ul class="user-nav">
+              <li class="user-search">
+                  <input type="search" placeholder="Search">
+                  <button class="user-search-btn">
+                      <span class="fa fa-search"></span>
+                  </button>
+              </li>
+              <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope-o"></i></a>
+                  <div class="dropdown-menu dropdown-menu-right panel panel-default">
+                     <div class="panel-heading" style="background-color: #009688;">未读消息 <span class="badge">14</span></div>
+                   
+                        <ul class="list-group">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                          </ul>
+                     <div class="panel-footer"><a>查看所有未读信息</a></div>
+                  </div>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown"><img src="./images/赵又廷.jpg" class="img-responsive" alt="响应式图片"></a>
+                <div class="dropdown-menu dropdown-menu-right panel panel-default">
+                       <ul class="list-group">
+                           <li class="list-group-item"><i class="fa fa-cog"></i>设置</li>
+                           <li class="list-group-item"><i class="fa fa-user-circle-o"></i>用户信息</li>
+                           <li class="list-group-item"><i class="fa fa-refresh"></i>账户切换</li>
+                         </ul>
+                    
+                 </div>
+            </li>
+          </ul>
+      </div>
+      <!-- header end -->
+      <!-- slide start -->
+      <div class="slide">
+          <div class="slide-header">
+              <img src="./images/赵又廷.jpg" class="img-responsive">
+              <div class="slide-username">
+                  <h5>前端开发</h5>
+                  <p>css3 html5 js </p>
+              </div>
+          </div>
+          <div class="slide-main">
+              <ul class="slide-main-menu" id="menu">
+                  <li class="panel"><a class="active" href="./插件展示.html"  target="aaa"><span class="fa fa-tachometer"></span><b>插件展示</b></a></li>
+                  <li class="panel">
+                      <a class="" data-parent="#menu" data-toggle="collapse" data-target="#menu2"><span class="fa fa-bookmark"></span><b>UI模板</b><i class="fa fa-angle-right"></i></a>
+                      <ul id="menu2" class="collapse">
+                            <li><a href="./组件展示.html"  target="aaa"><span class="fa fa-circle-o"></span>组件展示</a></li>
+                            <li><a><span class="fa fa-circle-o"></span>hello world</a></li>
+                            <li><a><span class="fa fa-circle-o"></span>hello world</a></li>
+                        </ul>
+                    </li>
+                  <li class="panel"><a><span class="fa fa-calendar"></span><b>图表展示</b></a></li>
+                  <li class="panel">
+                      <a class="" data-parent="#menu" data-toggle="collapse" data-target="#menu4"><span class="fa fa-edit (alias)"></span><b>Form组件</b><i class="fa fa-angle-right"></i></a>
+                      <ul id="menu4" class="collapse">
+                            <li><a><span class="fa fa-circle-o"></span>内容一</a></li>
+                            <li><a><span class="fa fa-circle-o"></span>内容二</a></li>
+                            <li><a><span class="fa fa-circle-o"></span>内容三</a></li>
+                        </ul>
+                </li>
+                  <li class="panel">
+                      <a class="" data-parent="#menu" data-toggle="collapse" data-target="#menu5"><span class="fa fa-tasks"></span><b>表格展示</b><i class="fa fa-angle-right"></i></a>
+                      <ul id="menu5" class="collapse">
+                            <li><a href="./表格.html"  target="aaa"><span class="fa fa-circle-o"></span>data 表格</a></li>
+                            <li><a><span class="fa fa-circle-o"></span>内容二</a></li>
+                            <li><a><span class="fa fa-circle-o"></span>内容三</a></li>
+                        </ul>
+                  </li>
+                  <li class="panel">
+                      <a class="" data-parent="#menu" data-toggle="collapse" data-target="#menu6"><span class="fa fa-paper-plane"></span><b>页面展示</b><i class="fa fa-angle-right"></i></a>
+                      <ul id="menu6" class="collapse">
+                            <li><a href="./登陆界面.html" target="aaa"><span class="fa fa-circle-o"></span>登录界面</a></li>
+                            <li><a href="./Error page.html" target="aaa"><span class="fa fa-circle-o"></span>Error Page</a></li>
+                            <li><a><span class="fa fa-circle-o"></span>内容三</a></li>
+                        </ul>
+                    </li>
+              </ul>
+          </div>
+      </div>
+      <!-- slide end -->
+      <!-- content start -->
+      <div class="content">
+        <iframe src="./插件展示.html" id="iframe666" name="aaa" frameboder="0" width="100%" height="900" style="border: 0;" scrolling="auto"></iframe>
+      </div>
+      <!-- content end -->
+
+   
+    <script src="./js/jquery3.3.3.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script>
+        //解决ifram 与 系统 同时出现 自带滚动条
+        function changeFrameHeight(){
+            var ifm= document.getElementById("iframe666");
+            ifm.height=document.documentElement.clientHeight-56;
+    }
+       window.onresize=function(){ 
+        changeFrameHeight();
+    }
+        $(function(){
+            changeFrameHeight();
+    });
+
+   //点击事件（侧边栏伸缩 以及 目录点击）
+    $(function(){
+           $('.panel > a').click(function(){
+            $(this).stop().toggleClass('active').siblings('a').removeClass('active');
+        })
+
+        $('[data-toggle="sidebar"]').click(function(event) {
+            event.preventDefault();
+            $('.app').toggleClass('sidenav-toggled');
+        });
+  
+    })
+    
+    </script>
+  </body>
+</html>

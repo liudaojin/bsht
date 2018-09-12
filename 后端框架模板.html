@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>后端极简框架</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/后端框架模板.css">
+</head>
+<body class="app sidebar-mini">
+
+    <header class="app-header">
+        <a href="index.html" class="app-header__logo">思诚科技</a>
+        <a class="app-sidebar__toggle" data-toggle="sidebar" href="javascript:;">
+            <i class="fa fa-bars"></i>
+        </a>
+    </header>
+
+    <aside class="app-sidebar">
+
+
+
+    </aside>
+
+    <main class="app-content">
+
+        <div class="app-title">
+           控制面板
+        </div>
+    </main>
+
+    
+    <script src="js/jquery3.3.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+    $(function(){
+        // Toggle Sidebar
+        $('[data-toggle="sidebar"]').click(function(event) {
+            event.preventDefault();
+            $('.app').toggleClass('sidenav-toggled');
+        });
+    })
+    </script>
+</body>
+</html>

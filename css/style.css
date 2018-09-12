@@ -1,0 +1,304 @@
+a{
+    text-decoration: none!important;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+span{
+    margin-right: 0;
+}
+b{
+    font-weight: normal;
+}
+.panel{
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+.header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+
+    display: flex;
+    background-color: #009688;
+    z-index: 1030;
+    padding-right: 15px;
+}
+.header .user-name{
+    color: #fff;
+    text-align: center;
+    font-family: 'Gabriola';
+    padding: 0 15px;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 50px;
+    cursor: pointer;
+}
+.header .user-menu{
+    order: -1;
+    padding: 0 15px;
+    font-family: fontAwesome;
+    color: #fff;
+    line-height: 2.4;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.header .user-menu:hover{
+    background-color: black;
+}
+.header .user-menu::before{
+    content: "\f0c9";
+    font-size: 21px;
+}
+.header .user-nav{
+    margin-bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    padding: 0;
+}
+.header .user-nav li{
+    display: inline-block;
+    display: flex;
+}
+.header .user-nav li a{
+    display: block;
+    padding: 15px;
+    line-height: 20px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+.header .user-nav .user-search{
+    display: none;
+}
+.header .user-nav .dropdown img{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+.header .user-nav .dropdown .panel{
+   margin: 0;
+   padding: 0;
+   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.header .user-nav .dropdown .panel .panel-footer{
+    padding: 0;
+    text-align: center;
+}
+.header .user-nav .dropdown .panel .panel-footer a{
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 16px;
+    color: #009688;
+}
+.header .user-nav .dropdown .panel .list-group{
+    
+}
+.header .user-nav .dropdown .panel .list-group .fa{
+    margin-top: 3px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+.slide{
+    position: fixed;
+    background-color: #222d32;
+    width: 230px;
+    padding-top: 40px;
+    height: 100vh;
+    z-index: 10;
+    left: -230px;
+    transition: left 0.3s ease, width 0.3s ease;
+}
+.slide .slide-header{
+    padding:10px;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    color: #fff;
+    margin-bottom: 20px;
+ 
+}
+
+.app.sidenav-toggled .slide {
+    left: 0;
+}
+.slide .slide-header img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.slide .slide-header .slide-username{
+    display: inline-block;
+    text-align: left;
+    margin-left: 10px;
+}
+.slide .slide-header .slide-username h5{
+    font-size: 16px;
+}
+.slide .slide-main .slide-main-menu{
+    padding-left: 0;
+}
+.slide .slide-main .slide-main-menu a.active{
+    background: #0d1214;
+    border-left: 3px solid  #009688;
+}
+.slide .slide-main .slide-main-menu li > a{
+    padding: 12px 15px;
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    border: 3px solid transparent;
+    
+}
+.slide .slide-main .slide-main-menu .panel .collapse{
+    padding-left: 0;
+}
+.slide .slide-main .slide-main-menu .panel .collapse li{
+    cursor: pointer;
+}
+.slide .slide-main .slide-main-menu .panel .collapse p{
+    margin-bottom: 0;
+    padding: 10px 15px;
+    color: white;
+}
+.slide .slide-main .slide-main-menu .panel a.active i{
+    transform: rotate(90deg);
+}
+.slide .slide-main .slide-main-menu li a::after{
+    content: "";
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+.slide .slide-main .slide-main-menu li a i.fa{
+  float: right;
+  transition: 0.1s ease;
+  display: inline-block;
+}
+.slide .slide-main .slide-main-menu li a:hover{
+    background: #0d1214;
+    border-left: 3px solid  #009688;
+}
+.slide .slide-main .slide-main-menu li a{
+    position: relative;
+}
+.slide .slide-main .slide-main-menu li a span{
+    margin-right: 10px;
+}
+.content{
+    margin-top: 50px;
+    /* padding:30px; */
+    background-color: #E5E5E5;
+}
+/* .app.sidenav-toggled .content {
+    margin-left: 0;
+} */
+
+@media screen and (min-width: 768px){
+    .header{
+        padding-right: 30px;
+    }
+    .header .user-name{
+        width: 230px;
+        background-color: #007d71;
+    }
+    .header .user-menu{
+        order: 0;
+    }
+    .header .user-nav .user-search{
+        display: block;
+        margin-right: 15px;
+        padding: 10px 0;
+        position: relative;
+    }
+    .header .user-nav .user-search input{
+        border: 0;
+        padding: 5px 10px;
+        padding-right: 30px;
+        border-radius: 2px;
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    .header .user-nav .user-search .user-search-btn{
+        position: absolute;
+        right: 0;
+        top: 10px;
+        bottom: 10px;
+        padding: 0 10px;
+        border: 0;
+        color: rgba(0, 0, 0, 0.8);
+        background: none;
+        cursor: pointer;
+        outline: 0;
+    }
+    .slide{
+        left: 0;
+        width: 230px;
+    }
+    .app.sidenav-toggled .slide{
+         left: 0;
+         width: 50px;
+     
+    }
+    .app.sidenav-toggled .slide .slide-header img{
+        width: 30px;
+        height: 30px;
+    }
+    .app.sidenav-toggled .slide .slide-username{
+        display: none;
+    }
+   
+    .content{
+        margin-left: 230px;
+        transition: 0.3s ease;
+       
+    }
+    .app.sidenav-toggled .content{
+        margin-left: 50px; 
+    }
+
+    .app.sidenav-toggled .slide .slide-main .slide-main-menu .panel b{
+        display: block;
+        position: absolute;
+        top: -2px;
+        left: 48px;
+        min-width: 180px;
+        padding: 17px 5px 18px 20px;
+        border-radius: 0 3px 3px 0;
+        margin-left: -3px;
+        line-height: 1;
+        display: none;
+        background: #0d1214;
+        border-top-right-radius: 4px;
+        z-index: 15;
+        color: #0d1214;
+    }
+    .app.sidenav-toggled .slide .slide-main .slide-main-menu .panel ul{
+        position: absolute;
+        left: 48px;
+        min-width: 180px;
+        padding: 12px 0;
+        display: none;
+        border-bottom-right-radius: 4px;
+        background: #2a383e;
+        z-index: 15;
+    }
+    /* .app.sidenav-toggled .slide .slide-main .slide-main-menu .panel:active ul{
+        display: none;
+    } */
+    .app.sidenav-toggled .slide .slide-main .slide-main-menu .panel > a i{
+        display: none;
+    }
+    .app.sidenav-toggled .slide .slide-main .slide-main-menu .panel:hover b{
+        display: block;
+        color: white;
+    }
+    .app.sidenav-toggled .slide .slide-main .slide-main-menu .panel:hover ul{
+       display: block
+    }
+    
+}

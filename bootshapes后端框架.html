@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>后端极简框架</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootshapeskj.css">
+</head>
+<body class="app sidebar-mini">
+
+    <header class="app-header">
+        <a href="index.html" class="app-header__logo">思诚科技</a>
+        <a class="app-sidebar__toggle" data-toggle="sidebar" href="javascript:;">
+            <i class="fa fa-bars"></i>
+        </a>
+        <div class="app-header__nav">
+            <div style="line-height: 50px;color: #fff;">右侧导航（内容自定）</div>
+        </div>
+    </header>
+
+    <aside class="app-sidebar">
+
+        <ul id="treenav" class="app-menu">
+
+            <li class="panel active">
+                <a class="app-menu__item" href="index.html">
+                    <i class="app-menu__icon fa fa-dashboard"></i>
+                    <span class="app-menu__label">控制面板</span>
+                </a>
+            </li>
+            <li class="panel">
+                <a class="app-menu__item" href="#item2" data-parent="#treenav" data-toggle="collapse">
+                    <i class="app-menu__icon fa fa-laptop"></i>
+                    <span class="app-menu__label">UI元素</span>
+                    <i class="app-menu__arrow fa fa-angle-right"></i>
+                </a>
+                <ul class="collapse" id="item2">
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> Bootstrap组件</a></li>
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> 图标字体</a></li>
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> 卡片</a></li>
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> 小部件</a></li>
+                </ul>
+            </li>
+            <li class="panel">
+                <a class="app-menu__item" href="index.html">
+                    <i class="app-menu__icon fa fa-pie-chart"></i>
+                    <span class="app-menu__label">图表</span>
+                </a>
+            </li>
+            <li class="panel">
+                <a class="app-menu__item" href="#item4" data-parent="#treenav" data-toggle="collapse">
+                    <i class="app-menu__icon fa fa-edit"></i>
+                    <span class="app-menu__label">表单</span>
+                    <i class="app-menu__arrow fa fa-angle-right"></i>
+                </a>
+                <ul class="collapse" id="item4">
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> 表单组件</a></li>
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> 自定义组件</a></li>
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> 表单示例</a></li>
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> 表单通知</a></li>
+                </ul>
+            </li>
+            <li class="panel">
+                <a class="app-menu__item" href="#item5" data-parent="#treenav" data-toggle="collapse">
+                    <i class="app-menu__icon fa fa-th-list"></i>
+                    <span class="app-menu__label">表格</span>
+                    <i class="app-menu__arrow fa fa-angle-right"></i>
+                </a>
+                <ul class="collapse" id="item5">
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> 基础表格</a></li>
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> 数据表格</a></li>
+
+                </ul>
+            </li>
+            <li class="panel">
+                <a class="app-menu__item" href="#item6" data-parent="#treenav" data-toggle="collapse">
+                    <i class="app-menu__icon fa fa-file-text"></i>
+                    <span class="app-menu__label">页面</span>
+                    <i class="app-menu__arrow fa fa-angle-right"></i>
+                </a>
+                <ul class="collapse" id="item6">
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> 空白页面</a></li>
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> 登录页面</a></li>
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> 锁屏页面</a></li>
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> 用户页面</a></li>
+                    <li><a href="#"><i class="icon fa fa-circle-o"></i> 发票页面</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="app-content">
+
+        <div class="app-title">
+           控制面板
+        </div>
+    </main>
+
+    
+    <script src="js/jquery3.3.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+    $(function(){
+        // Toggle Sidebar
+        $('[data-toggle="sidebar"]').click(function(event) {
+            event.preventDefault();
+            $('.app').toggleClass('sidebar-toggled');
+        });
+
+        $('.panel').click(function(){
+            $(this).toggleClass('active').siblings('li.panel').removeClass('active');
+        })
+    })
+    </script>
+</body>
+</html>

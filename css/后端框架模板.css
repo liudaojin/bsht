@@ -1,0 +1,94 @@
+.app-header{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #009688;
+    z-index: 1030;
+}
+
+.app-header__logo{
+    display: none;
+    font-size: 20px;
+    color: #fff;
+    padding: 0 15px;
+    line-height: 50px;
+    text-align: center;
+}
+.app-header__logo:focus,
+.app-header__logo:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.app-sidebar__toggle{
+    display: block;
+    padding: 0 15px;
+    color: #fff;
+    font-size: 21px;
+    transition: background-color 0.3s ease;
+    line-height: 50px;
+}
+.app-sidebar__toggle:focus,
+.app-sidebar__toggle:hover {
+    color: #fff;
+    background-color: #00635a;
+    text-decoration: none;
+}
+
+.app-sidebar{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 70px;
+    width: 230px;
+    overflow: auto;
+    z-index: 10;
+    background-color: #222d32;
+    transition: left 0.3s ease, width 0.3s ease;
+}
+
+.app-content{
+    min-height: calc(100vh - 50px);
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #E5E5E5;
+    transition: margin-left 0.3s ease;
+}
+
+/*手机区域*/
+@media screen and (max-width: 767px){
+    .app {
+        overflow-x: hidden;
+    }
+    .app .app-sidebar {
+        left: -230px;
+    }
+    .app.sidenav-toggled .app-content {
+        margin-left: 0;
+    }
+    .app.sidenav-toggled .app-sidebar {
+        left: 0;
+    }
+}
+/* 大于手机区域 （这里指平板） */
+@media screen and (min-width: 768px){
+    .app-header__logo{
+        display: block;
+        width: 230px;
+        background-color: #007d71;
+    }
+    .app-content {
+        margin-left: 230px;
+    }
+    .sidebar-mini.sidenav-toggled .app-content {
+        margin-left: 50px;
+    }
+    .sidebar-mini.sidenav-toggled .app-sidebar {
+        left: 0;
+        width: 50px;
+        overflow: hidden;
+    }
+}

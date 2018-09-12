@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap.css" rel="stylesheet">
+    <link href="./css/chajianzhanshi.css" rel="stylesheet">
+    <link href="./css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="content">
+      <div class="content-title">
+          <div class="content-title1">
+              <h1><span class="fa fa-tachometer"></span>插件展示</h1>
+              <p>A free and open source Bootstrap 4 admin template</p>
+          </div>
+          <div class="content-title2">
+              <a><i class="fa fa-home"></i></a>
+              <a href="#">插件展示</a>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <div class="row-content">
+            <i class="icon fa fa-user-circle-o fa-3x"></i>
+            <div class="row-content-word">
+              <h4>Users</h4>
+              <p>8</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="row-content">
+              <i class="icon fa fa-heart fa-3x" style="background-color: hotpink"></i>
+              <div class="row-content-word">
+                <h4>LIKES</h4>
+                <p>28</p>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="row-content">
+              <i class="icon fa fa-download fa-3x" style="background-color: sandybrown"></i>
+              <div class="row-content-word">
+                <h4>Download</h4>
+                <p>66</p>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="row-content">
+              <i class="icon fa fa-spinner fa-3x" style="background-color: lightseagreen"></i>
+              <div class="row-content-word">
+                <h4>Start</h4>
+                <p>24</p>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="row-echart">
+            <h3>Monthly Sales</h3>
+            <div class="row-chart " id="charts1" style="height: 300px; width: 100%; overflow: hidden;" >
+               
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row-echart">
+              <h3>Support Requests</h3>
+              <div class="row-chart" id="charts2" style="height: 300px; width:100%;" >
+                 
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-6">
+              <div class="row-title">
+                  <h3>Features</h3>
+                  <p>Vali is a free and responsive admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.</p>
+                  <p>Custom form elements like toggle buttons, auto-complete, tags and date-picker</p>
+                  <p>Vali is is light-weight, expendable and good looking theme. The theme has all the features required in a dashboard theme but this features are built like plug and play module. 
+                      Take a look at the documentation about customizing the theme colors and functionality.</p>
+                  <p class="row-btn">
+                      <a class="gg"><i class="fa fa-chrome">&nbsp;&nbsp;Google</i></a>
+                      <a class="gt"><i class="fa fa-github-square">&nbsp;&nbsp;Github</i></a>
+                      <a class="tw"><i class="fa fa-twitter">&nbsp;&nbsp;Twitter</i></a>
+                  </p> 
+              </div>
+          </div>
+          <div class="col-sm-6">
+              <div class="row-title">
+                    <h3>Compatibility with frameworks</h3>
+                    <p>This theme is not built for a specific framework or technology like Angular or React etc. But due
+                         to it's modular nature it's very easy to incorporate it into any front-end or back-end framework like Angular, React or Laravel.
+                    </p>
+                    <p>Go to documentation for more details about integrating this theme with various frameworks.</p>
+                    <p>The source code is available on GitHub. If anything is missing or weird please report it as an issue on GitHub. If you want to contribute to this theme pull requests are always welcome.</p>
+              </div>
+          </div>
+      </div>
+    </div>
+
+   <!-- <div id="charts" style="height: 300px;"></div> -->
+
+
+    <script src="./js/jquery3.3.3.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/echarts.min.js"></script>
+   
+    <script>
+
+    var myChart1= echarts.init(document.getElementById('charts1'),'macarons');
+    option = {
+    title: {
+        text: '阶梯瀑布图',
+        subtext: 'From ExcelHome',
+        sublink: 'http://e.weibo.com/1341556070/Aj1J2x5a5'
+    },
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        },
+        formatter: function (params) {
+            var tar;
+            if (params[1].value != '-') {
+                tar = params[1];
+            }
+            else {
+                tar = params[0];
+            }
+            return tar.name + '<br/>' + tar.seriesName + ' : ' + tar.value;
+        }
+    },
+    legend: {
+        data:['支出','收入']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type : 'category',
+        splitLine: {show:false},
+        data :  function (){
+            var list = [];
+            for (var i = 1; i <= 11; i++) {
+                list.push('11月' + i + '日');
+            }
+            return list;
+        }()
+    },
+    yAxis: {
+        type : 'value'
+    },
+    series: [
+        {
+            name: '辅助',
+            type: 'bar',
+            stack: '总量',
+            itemStyle: {
+                normal: {
+                    barBorderColor: 'rgba(0,0,0,0)',
+                    color: 'rgba(0,0,0,0)'
+                },
+                emphasis: {
+                    barBorderColor: 'rgba(0,0,0,0)',
+                    color: 'rgba(0,0,0,0)'
+                }
+            },
+            data: [0, 900, 1245, 1530, 1376, 1376, 1511, 1689, 1856, 1495, 1292]
+        },
+        {
+            name: '收入',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'top'
+                }
+            },
+            data: [900, 345, 393, '-', '-', 135, 178, 286, '-', '-', '-']
+        },
+        {
+            name: '支出',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                normal: {
+                    show: true,
+                    position: 'bottom'
+                }
+            },
+            data: ['-', '-', '-', 108, 154, '-', '-', '-', 119, 361, 203]
+        }
+    ]
+};
+
+
+           myChart1.setOption(option);
+
+
+  var myChart = echarts.init(document.getElementById('charts2'),'macarons');
+        option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}: {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                x: 'left',
+                data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+            },
+            series: [
+                {
+                    name:'访问来源',
+                    type:'pie',
+                    radius: ['50%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            show: true,
+                            textStyle: {
+                                fontSize: '30',
+                                fontWeight: 'bold'
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    data:[
+                        {value:335, name:'直接访问'},
+                        {value:310, name:'邮件营销'},
+                        {value:234, name:'联盟广告'},
+                        {value:135, name:'视频广告'},
+                        {value:1548, name:'搜索引擎'}
+                    ]
+                }
+            ]
+        };
+        myChart.setOption(option);
+
+window.onresize = function(){
+
+    myChart.resize();
+    myChart1.resize();
+}
+    
+    </script>
+  </body>
+</html>
